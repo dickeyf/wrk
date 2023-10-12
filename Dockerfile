@@ -6,5 +6,5 @@ RUN make
 
 FROM alpine:latest as production
 COPY --from=builder /wrk /wrk
-EXPOSE 80
+RUN apk update && apk add libgcc
 CMD ["wrk"]
